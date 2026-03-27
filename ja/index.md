@@ -4,4 +4,4 @@ title: ホーム
 permalink: /ja/
 ---
 
-[English version](/)
+[English version]({{ site.baseurl }}/)

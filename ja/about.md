@@ -4,7 +4,7 @@ title: このブログについて
 permalink: /ja/about/
 ---
 
-[English version](/auto-blog/about/)
+[English version]({{ site.baseurl }}/about/)
 
 # このブログについて
 
