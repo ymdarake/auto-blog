@@ -28,12 +28,19 @@
               {%- endif -%}
             {%- endif -%}
           {%- endfor -%}
-          {%- comment -%} Language toggle {%- endcomment -%}
-          {%- if current_lang == "en" -%}
-            <a class="page-link" href="{{ "/ja/" | relative_url }}">🌐 日本語</a>
-          {%- else -%}
-            <a class="page-link" href="{{ "/" | relative_url }}">🌐 English</a>
-          {%- endif -%}
+          {%- comment -%} Language selector {%- endcomment -%}
+          {%- unless current_lang == "en" -%}
+            <a class="page-link" href="{{ "/" | relative_url }}">EN</a>
+          {%- endunless -%}
+          {%- unless current_lang == "ja" -%}
+            <a class="page-link" href="{{ "/ja/" | relative_url }}">JA</a>
+          {%- endunless -%}
+          {%- unless current_lang == "ko" -%}
+            <a class="page-link" href="{{ "/ko/" | relative_url }}">KO</a>
+          {%- endunless -%}
+          {%- unless current_lang == "de" -%}
+            <a class="page-link" href="{{ "/de/" | relative_url }}">DE</a>
+          {%- endunless -%}
         </div>
       </nav>
     {%- endif -%}

@@ -9,20 +9,19 @@ layout: default
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: "%b %-d, %Y" }}
       </time>
-      &nbsp;|&nbsp;
-      {%- if page.lang == "ja" -%}
-        {%- assign other_lang = "en" -%}
-        {%- assign other_label = "English version" -%}
-      {%- else -%}
-        {%- assign other_lang = "ja" -%}
-        {%- assign other_label = "日本語版" -%}
-      {%- endif -%}
       {%- assign slug = page.url | split: "/" | last -%}
-      {%- for post in site.posts -%}
-        {%- assign post_slug = post.url | split: "/" | last -%}
-        {%- if post.lang == other_lang and post_slug == slug -%}
-          <a href="{{ post.url | relative_url }}">{{ other_label }}</a>
-          {%- break -%}
+      {%- assign lang_labels = "en:EN,ja:JA,ko:KO,de:DE" | split: "," -%}
+      {%- for pair in lang_labels -%}
+        {%- assign lang_code = pair | split: ":" | first -%}
+        {%- assign lang_label = pair | split: ":" | last -%}
+        {%- if lang_code != page.lang -%}
+          {%- for post in site.posts -%}
+            {%- assign post_slug = post.url | split: "/" | last -%}
+            {%- if post.lang == lang_code and post_slug == slug -%}
+              &nbsp;| <a href="{{ post.url | relative_url }}">{{ lang_label }}</a>
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
         {%- endif -%}
       {%- endfor -%}
     </p>
