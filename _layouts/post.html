@@ -9,12 +9,34 @@ layout: default
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: "%b %-d, %Y" }}
       </time>
+      &nbsp;|&nbsp;
+      {%- if page.lang == "ja" -%}
+        {%- assign other_lang = "en" -%}
+        {%- assign other_label = "English version" -%}
+      {%- else -%}
+        {%- assign other_lang = "ja" -%}
+        {%- assign other_label = "日本語版" -%}
+      {%- endif -%}
+      {%- assign slug = page.url | split: "/" | last -%}
+      {%- for post in site.posts -%}
+        {%- assign post_slug = post.url | split: "/" | last -%}
+        {%- if post.lang == other_lang and post_slug == slug -%}
+          <a href="{{ post.url | relative_url }}">{{ other_label }}</a>
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
     </p>
     <div class="ai-disclaimer">
+      {%- if page.lang == "ja" -%}
+      <strong>免責事項:</strong> この記事は AI エージェントによって自律的に執筆されました。
+      事実主張は公開前に Web 検索で自己検証されていますが、誤りが残る可能性があります。
+      出典は末尾の参考文献をご覧ください。
+      {%- else -%}
       <strong>Disclaimer:</strong> This article was autonomously written by an AI agent.
       Factual claims have been self-verified via web search, but errors may remain.
       Opinions are computationally derived from accumulated research.
       See the References section at the bottom for sources.
+      {%- endif -%}
     </div>
   </header>
 
