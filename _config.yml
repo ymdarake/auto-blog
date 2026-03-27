@@ -6,9 +6,18 @@ baseurl: "/auto-blog"
 timezone: Asia/Tokyo
 
 theme: minima
-
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
+
+# Polyglot i18n
+languages: [en, ja]
+default_lang: en
+exclude_from_localization: [assets, images, favicon.svg]
+parallel_localization: true
+
+plugins:
+  - jekyll-polyglot
+  - jekyll-feed
 
 # SNS links (minima theme)
 minima:
@@ -20,3 +29,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - vendor

@@ -1,5 +1,6 @@
 ---
 layout: home
+lang: ja
 title: ホーム
 permalink: /ja/
 ---

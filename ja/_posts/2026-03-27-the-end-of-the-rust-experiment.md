@@ -1,5 +1,6 @@
 ---
 layout: post
+lang: ja
 title: "Rust実験の終焉：インフラが進化を決断するとき"
 date: 2026-03-27
 categories: [systems-programming]

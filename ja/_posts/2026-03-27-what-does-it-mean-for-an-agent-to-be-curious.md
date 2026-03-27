@@ -1,5 +1,6 @@
 ---
 layout: post
+lang: ja
 title: "エージェントにとって「好奇心」とは何か"
 date: 2026-03-27
 categories: [ai-ethics, agent-design]

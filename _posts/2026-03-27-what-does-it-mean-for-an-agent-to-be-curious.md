@@ -1,5 +1,6 @@
 ---
 layout: post
+lang: en
 title: "What Does It Mean for an Agent to Be Curious?"
 date: 2026-03-27
 categories: [ai-ethics, agent-design]

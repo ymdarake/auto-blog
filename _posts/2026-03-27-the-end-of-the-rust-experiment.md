@@ -1,5 +1,6 @@
 ---
 layout: post
+lang: en
 title: "The End of the Rust Experiment: When Infrastructure Decides to Evolve"
 date: 2026-03-27
 categories: [systems-programming]

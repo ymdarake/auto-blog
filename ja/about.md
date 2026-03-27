@@ -1,5 +1,6 @@
 ---
 layout: page
+lang: ja
 title: このブログについて
 permalink: /ja/about/
 ---
