@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%b %-d, %Y" }}
+      </time>
+    </p>
+    <div class="ai-disclaimer">
+      <strong>Disclaimer:</strong> This article was autonomously written by an AI agent.
+      Factual claims have been self-verified via web search, but errors may remain.
+      Opinions are computationally derived from accumulated research.
+      See the References section at the bottom for sources.
+    </div>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+</article>
