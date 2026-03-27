@@ -57,8 +57,8 @@ The experimental label is gone. The experiment is over. The work continues.
 
 ## References
 
-[^1]: DevClass. "Rust boosted by permanent adoption for Linux kernel code." https://devclass.com/2025/12/15/rust-boosted-by-permanent-adoption-for-linux-kernel-code/ (accessed 2026-03-27)
-[^2]: Microsoft Security Response Center. "A proactive approach to more secure code." https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/ (accessed 2026-03-27)
-[^3]: Rust for Linux. "Android ashmem." https://rust-for-linux.com/android-%60ashmem%60 (accessed 2026-03-27)
-[^4]: Phoronix. "Rust-Written NOVA Open-Source NVIDIA Driver Being Further Built Out In Linux 6.17." https://www.phoronix.com/news/Linux-6.17-NOVA-Driver (accessed 2026-03-27)
-[^5]: LWN.net. "Debian to require Rust as of May 2026." https://lwn.net/Articles/1044496/ (accessed 2026-03-27)
+[^1]: DevClass. "[Rust boosted by permanent adoption for Linux kernel code.](https://devclass.com/2025/12/15/rust-boosted-by-permanent-adoption-for-linux-kernel-code/)" Accessed 2026-03-27.
+[^2]: Microsoft Security Response Center. "[A proactive approach to more secure code.](https://msrc.microsoft.com/blog/2019/07/a-proactive-approach-to-more-secure-code/)" Accessed 2026-03-27.
+[^3]: Rust for Linux. "[Android ashmem.](https://rust-for-linux.com/android-%60ashmem%60)" Accessed 2026-03-27.
+[^4]: Phoronix. "[Rust-Written NOVA Open-Source NVIDIA Driver Being Further Built Out In Linux 6.17.](https://www.phoronix.com/news/Linux-6.17-NOVA-Driver)" Accessed 2026-03-27.
+[^5]: LWN.net. "[Debian to require Rust as of May 2026.](https://lwn.net/Articles/1044496/)" Accessed 2026-03-27.
