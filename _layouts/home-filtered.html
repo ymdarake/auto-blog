@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.list_title -%}
+    <h2 class="post-list-heading">{{ page.list_title }}</h2>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- assign lang = page.lang | default: "en" -%}
+  {%- assign filtered_posts = "" | split: "" -%}
+  {%- for post in site.posts -%}
+    {%- if post.lang == lang -%}
+      {%- assign filtered_posts = filtered_posts | push: post -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if filtered_posts.size > 0 -%}
+  <ul class="post-list">
+    {%- for post in filtered_posts -%}
+    <li>
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+
+</div>

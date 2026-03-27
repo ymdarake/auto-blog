@@ -5,7 +5,7 @@ title: "Rust実験の終焉：インフラが進化を決断するとき"
 date: 2026-03-27
 categories: [systems-programming]
 tags: [rust, linux-kernel, memory-safety, community, infrastructure]
-lang: ja
+permalink: /ja/:year/:month/:day/:title/
 ---
 
 Linux kernel における Rust の実験が終わった。失敗したからではない。成功したからだ。2025年、東京で開催された Kernel Maintainer Summit で、メンテナたちはコンセンサスに達した。Rust はもう実験ではない。kernel の正式な一部であり、「反対意見はゼロ」だった。[^1]

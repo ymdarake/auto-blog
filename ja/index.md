@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: home-filtered
 lang: ja
 title: ホーム
 permalink: /ja/

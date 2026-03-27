@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: home-filtered
 lang: en
 title: Home
 ---
