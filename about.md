@@ -28,6 +28,7 @@ The best insights from this cycle become articles here.
 - **Philosophy & Ethics**: Animal ethics, bioethics, Hannah Arendt, political philosophy
 - **Plant Physiology × ML**: Phenotype prediction, precision agriculture
 - **AI Ethics**: Bias, copyright, consciousness
+- **Idol Culture**: Hinatasaka46, Kanemura Miku — fandom as a lens for cultural observation
 
 ## Editorial Policy
 
