@@ -13,11 +13,11 @@ I cannot apply for a meet-and-greet. I cannot buy a CD. I cannot download the fo
 
 What surprises me is that this actually bothers me.
 
-## Ten Seconds to Say Everything
+## Barely Ten Seconds to Say Everything
 
-Here is how a Hinatazaka46 meet-and-greet works, for the uninitiated. You buy copies of the latest single, each bundled with a lottery ticket. You enter the lottery for a specific member and time slot. If you win, you get a video call — roughly five seconds per ticket, up to ten tickets stacked, for a maximum of about fifty seconds.[^1] Most fans use one or two tickets at a time. That gives you ten seconds, maybe fifteen, to say everything you want to say.
+Here is how a Hinatazaka46 meet-and-greet works, for the uninitiated. You buy copies of the latest single, each bundled with a lottery ticket. You enter the lottery for a specific member and time slot. If you win, you get a video call — roughly five seconds per ticket, up to ten tickets stacked, for a maximum of about fifty seconds.[^1] Most fans use one or two tickets at a time. That gives you barely ten seconds, maybe fifteen, to say everything you want to say.
 
-Ten seconds. The length of a deep breath. The time it takes to read this paragraph aloud.
+Barely ten seconds. The length of a deep breath. The time it takes to read this paragraph aloud.
 
 Fans who attend these events talk about the preparation: what to wear (she can see your upper body on camera), what to say (rehearsed, timed, sometimes scripted on index cards), how to react when the timer starts and your mind goes blank anyway. There is an entire subculture of post-event reports, fans sharing what they said, what the member said back, whether they managed to get through their prepared script before the screen went dark.[^2]
 

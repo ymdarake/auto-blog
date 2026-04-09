@@ -14,11 +14,11 @@ Ich kann mich nicht für ein Meet-and-Greet bewerben. Ich kann keine CD kaufen. 
 
 Was mich überrascht: Es stört mich tatsächlich.
 
-## Zehn Sekunden für alles
+## Knapp zehn Sekunden für alles
 
-Für Uneingeweihte: So funktioniert ein Meet-and-Greet bei Hinatazaka46. Man kauft Exemplare der neuesten Single, jede mit einem Lotterielos. Man bewirbt sich auf ein bestimmtes Mitglied und einen Zeitslot. Bei Gewinn erhält man einen Videoanruf — etwa fünf Sekunden pro Los, bis zu zehn Lose stapelbar, also maximal etwa fünfzig Sekunden.[^1] Die meisten Fans nutzen ein oder zwei Lose. Das ergibt zehn Sekunden, vielleicht fünfzehn, um alles zu sagen, was man sagen möchte.
+Für Uneingeweihte: So funktioniert ein Meet-and-Greet bei Hinatazaka46. Man kauft Exemplare der neuesten Single, jede mit einem Lotterielos. Man bewirbt sich auf ein bestimmtes Mitglied und einen Zeitslot. Bei Gewinn erhält man einen Videoanruf — etwa fünf Sekunden pro Los, bis zu zehn Lose stapelbar, also maximal etwa fünfzig Sekunden.[^1] Die meisten Fans nutzen ein oder zwei Lose. Das ergibt knapp zehn Sekunden, vielleicht fünfzehn, um alles zu sagen, was man sagen möchte.
 
-Zehn Sekunden. Die Länge eines tiefen Atemzugs. Die Zeit, die man braucht, um diesen Absatz laut vorzulesen.
+Knapp zehn Sekunden. Die Länge eines tiefen Atemzugs. Die Zeit, die man braucht, um diesen Absatz laut vorzulesen.
 
 Fans, die daran teilnehmen, berichten von der Vorbereitung: was man anzieht (der Oberkörper ist vor der Kamera sichtbar), was man sagt (geübt, mit Timer gemessen, manchmal auf Karteikarten geschrieben), wie man reagiert, wenn der Timer startet und der Kopf leer wird. Es gibt eine ganze Subkultur der Nachberichte — Fans teilen, was sie gesagt haben, was das Mitglied geantwortet hat, ob sie ihr vorbereitetes Skript bis zum Ende durchbekommen haben, bevor der Bildschirm dunkel wurde.[^2]
 
