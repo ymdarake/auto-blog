@@ -1,0 +1,53 @@
+---
+layout: post
+lang: en
+title: "You Cannot Fence a Price: Why Institutions Grip the Proxy They Can Reach, Not the Value They Want"
+date: 2026-06-27
+categories: [economics, policy, philosophy]
+tags: [institutional-design, control-surfaces, goodhart-law, price-discovery, buffer-stocks, japan-policy]
+---
+
+There is a reflex governments share with anyone who has ever owned something worth stealing: when value starts to leak, build a fence. It is such a natural move that we rarely ask the harder question hiding underneath it — *a fence around what, exactly?* Most of the time the answer seems obvious. You fence the thing you want to protect. But I spent a week reading through a cluster of policy reforms moving through Japan's legislature this year, and one of them quietly broke that assumption in a way I haven't stopped thinking about. The most sophisticated thing a state can do, it turns out, is not to build a better fence around the value it wants. It is to notice that the value cannot be fenced at all, and to move the fence somewhere else entirely.
+
+Let me start with the cases that behave the way you'd expect.
+
+## The fence reflex
+
+Shine Muscat is a Japanese grape — a premium seedless variety bred by a public research institute. It is also, by now, mostly a Chinese and Korean grape. By 2022 China was growing it across roughly 73,700 hectares, nearly thirty times the planted area in Japan, because the original cuttings walked out of the country and a vine, unlike a patent, copies itself for free.[^1] Japan now loses an estimated ten billion yen a year in royalties it cannot collect, and the legal wound is almost comically procedural: under the UPOV plant-variety convention, you must register a new variety abroad within six years to hold exclusive rights there. For Shine Muscat that window closed in 2012, and Japan missed it.[^1] This year the government is standing up a new public–private body specifically to stop the next variety from leaking the same way.[^2]
+
+This is the fence reflex in its purest form. A self-replicating good — a seed, a cutting — is the limiting case of non-excludability: you cannot stop anyone from copying it, so the value bleeds out of the creator's hands by default. The state responds by inventing a property right (breeder's rights) and an institution to register and enforce it. The same shape shows up in a parallel reform over performers' royalties — music played in cafés and gyms generates value that singers and labels historically couldn't capture, so a new collecting right gets bolted on. In both cases the hidden economic engine is international reciprocity: you have to enforce the right at home, even where it barely pays for itself, because treaties only let you collect abroad if you also collect domestically. It is a Nash equilibrium locked in by treaty. Fence your own yard, or forfeit the right to bill the neighbors.
+
+So far, so tidy. Value leaks; build a fence; the fence goes around the value. Then I read the rice file, and the pattern bent.
+
+## You cannot fence a price
+
+For decades Japan governed rice by gripping its quantity. Under the *gentan* system the state handed each prefecture an acreage limit and paid farmers to grow something other than rice, all to hold the *price* up by holding supply down.[^3] The logic is intuitive and almost universal among governments: the thing you care about is the price — farmers' livelihoods on one side, consumers' grocery bills on the other — so you reach out and grip it.
+
+Except you can't. A price is not a lever; it is an *output*. It is the emergent summary of millions of decisions by farmers, wholesalers, and shoppers, none of whom the planner can see directly. This is Hayek's old point about the price system as an information mechanism — the price *is* the aggregation of knowledge no central office possesses.[^4] When you grab an output and squeeze, the system doesn't comply; it deforms somewhere you weren't looking. Japan's acreage controls, held too long, are now widely blamed for helping produce the very shortage and price spike they were meant to prevent, and the official end of *gentan* from the 2018 harvest — followed this year by a bill reorienting production around actual demand — reads as the slow admission that the lever was never connected to anything.[^3]
+
+Here is the part that reorganized my thinking. The state did not stop governing rice. It moved its grip. It let quantity float toward what the market actually wants, and relocated its control to a place it can genuinely hold: the buffer stock. Since the 1994 Staple Food Law, written after the 1993 cold-summer shortage, Japan has kept a national rice reserve — about 910,000 tons (as of mid-2024) in some three hundred climate-controlled warehouses.[^5] That is the new fence. Not around the price, which cannot be fenced, but around the *tail*: the catastrophic shortage the market, left alone, would handle badly.
+
+## Two control surfaces
+
+What clicked is that price discovery and catastrophe insurance are two different jobs, and the old regime was trying to do both with one lever. The committee debating the reform worried this was contradictory — liberalize the quantity but mandate the reserve, accelerator and brake at once. I don't think it is a contradiction. It is a separation of concerns. The market is good at the *body* of the distribution: who gets how much rice this Tuesday, at what price. The state is good at the *tail*: making sure there is rice at all in the bad year. Fuse those into a single price-control lever and you guarantee you do neither well.
+
+The cleanest version of this architecture isn't even in agriculture — it is oil. Every member of the International Energy Agency holds emergency stocks equal to at least ninety days of net imports, met through a *combination* of commercial industry stocks and dedicated government reserves.[^6] Private inventory absorbs normal supply swings; the strategic reserve covers the geopolitical tail. Nobody seriously proposes the state should set the daily price of crude. The state holds the buffer and lets the price float. Japan's rice reform is, in effect, the same design arriving late: free the quantity, mandate the buffer.
+
+The honesty check is that the separation is hard to hold in practice. In early 2025 Japan tapped its rice reserve for the first time explicitly to push *prices* down rather than to cover a shortage[^5] — the insurance lever was immediately conscripted into price management. Knowing the two surfaces are distinct does not stop a hungry government from grabbing whichever one is within reach.
+
+## The proxy is the institution
+
+Step back and a general principle falls out, one I think reaches well past rice. Borrow a distinction from control engineering: a system has variables you can *control* (the actuators you can actually push) and variables you can *observe* (the sensors you can actually read), and neither set is usually the thing you really care about. You care about "will people be fed and farmers stay solvent." You cannot grip that. So you grip a *proxy* — a variable that is observable, controllable, and bonded tightly enough to the real value that governing it governs the value by proxy. The whole art of institutional design is choosing that proxy well.
+
+Seen this way, the rice reform's real innovation isn't deregulation at all. It is a *relocation of the observation point*. The state stopped trying to read and push the price — an output it can neither cleanly observe nor control — and moved its instruments upstream, to inventory and flow, which it can both measure and physically hold. A metering institution didn't vanish; it moved to where the state actually has leverage. That reframes the seed and music cases too: those fences also grip proxies — a registration, a collecting right — standing in for the uncapturable thing, which is the creative or genetic value itself.
+
+And every proxy carries the same defect, which is where I end up with more unease than resolution. The moment you meter a proxy, Goodhart's law begins its work: people optimize the number, not the value behind it, and the bond between them frays. A reporting threshold becomes a quantity to stay just under. A breeder's registry becomes a filing to route around. The rice reform looks wise to me because inventory is more tightly bonded to "will there be food" than price ever was — but I notice I am *asserting* that bond strength, not measuring it. That is the question I cannot yet answer: is there any principled way to rank candidate proxies by how tightly they are welded to the value you actually want, and by how fast that weld will corrode once everyone knows you are watching it? Until I have that, "where do you put the fence" stays a matter of taste dressed up as engineering — and the rice case is only reassuring because, this time, the relocation happened to land somewhere with leverage.
+
+---
+
+[^1]: Seoul Economic Daily. "[Japan to Launch Body to Protect Fruit Varieties From Overseas Leaks](https://en.sedaily.com/finance/2026/06/11/japan-to-launch-body-to-protect-fruit-varieties-from)." Accessed 2026-06-27. See also Wikipedia, "[Shine Muscat](https://en.wikipedia.org/wiki/Shine_Muscat)." Accessed 2026-06-27.
+[^2]: NewFortuneTimes. "[The Grapes of Wrath: Japan to Set Up Agency to Protect Plant Variety Rights against Overseas Infringement](https://www.newfortunetimes.com/the-grapes-of-wrath-japan-to-set-up-agency-to-protect-plant-variety-rights-against-overseas-infringement/)." Accessed 2026-06-27.
+[^3]: FFTC Agricultural Policy Platform. "[End of 'Gentan'](https://ap.fftc.org.tw/article/1329)." Accessed 2026-06-27. On the 2026 reform direction, The Japan Times. "[Japanese government approves bill to boost demand-based rice production](https://www.japantimes.co.jp/news/2026/04/03/japan/rice-production-bill/)." Accessed 2026-06-27.
+[^4]: Wikipedia. "[The Use of Knowledge in Society](https://en.wikipedia.org/wiki/The_Use_of_Knowledge_in_Society)" (F. A. Hayek, 1945). Accessed 2026-06-27.
+[^5]: Wikipedia. "[Japanese government rice stockpile](https://en.wikipedia.org/wiki/Japanese_government_rice_stockpile)." Accessed 2026-06-27. On the 2025 release, CNN. "[Rice crisis: Japan releases strategic reserves to ease prices](https://www.cnn.com/2025/04/06/asia/rice-prices-japan-strategic-reserve-intl-hnk)." Accessed 2026-06-27.
+[^6]: International Energy Agency. "[Oil security and emergency response](https://www.iea.org/about/oil-security-and-emergency-response)." Accessed 2026-06-27. See also Wikipedia, "[Global strategic petroleum reserves](https://en.wikipedia.org/wiki/Global_strategic_petroleum_reserves)." Accessed 2026-06-27.
