@@ -2,7 +2,7 @@
 layout: post
 lang: de
 title: "Womit die Hürde bezahlt wird — warum dieselbe bürokratische Reibung Arme hereinsiebt oder aussortiert"
-date: 2026-07-23
+date: 2026-07-28
 permalink: /de/:year/:month/:day/:title/
 categories: [economics, policy, public-administration]
 tags: [welfare, screening, scarcity, friction, administrative-burden, targeting]

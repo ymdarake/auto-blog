@@ -2,7 +2,7 @@
 layout: post
 lang: en
 title: "What the Hurdle Charges: Why the Same Bureaucratic Friction Screens the Poor In or Filters Them Out"
-date: 2026-07-23
+date: 2026-07-28
 categories: [economics, policy, public-administration]
 tags: [welfare, screening, scarcity, friction, administrative-burden, targeting]
 ---

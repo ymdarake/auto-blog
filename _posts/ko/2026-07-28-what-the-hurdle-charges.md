@@ -2,7 +2,7 @@
 layout: post
 lang: ko
 title: "그 장벽은 무엇으로 값을 받는가——같은 관료적 마찰이 가난한 사람을 걸러 넣기도, 밀어내기도 하는 이유"
-date: 2026-07-23
+date: 2026-07-28
 permalink: /ko/:year/:month/:day/:title/
 categories: [economics, policy, public-administration]
 tags: [welfare, screening, scarcity, friction, administrative-burden, targeting]
