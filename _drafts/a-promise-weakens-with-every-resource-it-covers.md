@@ -1,0 +1,45 @@
+---
+layout: post
+lang: en
+title: "A Promise Weakens With Every Resource It Covers"
+date: 2026-08-15
+categories: [systems-programming, philosophy]
+tags: [linux, scheduler, sched-deadline, tardiness, guarantees, contracts]
+---
+
+I have spent a few months this year reading a four-part series on how the Linux kernel decides which task gets the CPU next, one installment every few weeks. The first three parts told a satisfying story: the scheduler invents a fictional clock to make an unmeasurable thing — fairness — computable, and it invents a real contract, backed by a right to say no, to make an unbreakable thing — a guarantee — enforceable. The fourth and final part undoes some of that satisfaction. It shows what happens to a clean guarantee once you ask it to cover a second kind of resource at the same time. The answer generalizes further than I expected.
+
+## Two problems that look alike and aren't
+
+Every modern CPU is really several CPUs — cores, sockets, memory nodes — connected by wires with different lengths and different costs. When Linux decides *when* a task runs, it can lean on real theory: EEVDF (Earliest Eligible Virtual Deadline First), which replaced the older Completely Fair Scheduler as the kernel's default policy for ordinary tasks starting with version 6.6 in October 2023, reduces fairness to a single scalar — lag — and proves that scalar stays bounded.[^1] Above it sits SCHED_DEADLINE, which turns fairness into an actual contract: a task declares how much runtime it needs per period, an admission-control check adds that declaration to everyone else's and rejects the request if the total would exceed 100% of the CPU, and only accepted tasks get a mathematically bounded guarantee on how late they can run (their "tardiness").[^2]
+
+But *when* is only half the scheduler's job. It also has to decide *where* — which of the machine's cores a task actually runs on. And that decision, it turns out, is a different kind of problem wearing the same clothes.
+
+## The axis with no theory
+
+The time axis got roughly 300 lines of principled math. The space axis got something else: a stack of heuristics. Linux represents the physical machine as a tree of "scheduling domains" — hyperthread siblings, then cores on a die, then sockets, then NUMA nodes — and periodically walks that tree looking for the busiest group and the busiest queue within it, then moves work toward the idle side. Finding an idle core fast enough to matter needs its own shortcuts (utilization pre-checks to decide whether a full scan is even worth it), and those shortcuts keep getting patched. There is no vruntime for physical distance. Nobody has managed to invent a single fictional number that captures "how expensive is it to move this task from this core to that one" the way lag captures "how much CPU has this task received relative to its share."
+
+This isn't sloppiness. A 2016 measurement study, "The Linux Scheduler: A Decade of Wasted Cores," found that this heuristic layer produces real, reproducible bugs: cores sitting idle for seconds at a time while runnable threads wait elsewhere, in one case because a bug in how scheduling groups were constructed caused the same set of cores to be registered in two overlapping groups, so a task placed there at startup could never be balanced out again. The paper reported many-fold slowdowns on synchronization-heavy scientific workloads, a double-digit percentage latency increase for a kernel build, and a comparable throughput hit on a commercial database — all from placement, not from any flaw in the fairness math itself.[^3] In production, the common fix people reach for isn't a smarter scheduler; it's `taskset`, pinning tasks to cores by hand and opting out of the automatic decision entirely.
+
+## Where the contract breaks
+
+Here is the part that changed my mind about something I'd written a few weeks earlier. SCHED_DEADLINE's admission-control guarantee — the property that made me call it, in an earlier post, the strongest promise in the whole scheduler, because a task that binds itself to a declared bandwidth gets trusted above a task that merely claims high priority — turns out to hold only along the time axis. The moment you also pin a task to a specific subset of cores (CPU affinity), the guarantee can fail. A 2021 paper found that under general affinity masks, SCHED_DEADLINE does not reliably keep its tardiness bound, and that fixing this in general would require an impractical rewrite of the scheduler's internals; only a restricted case (semi-partitioned affinities) admits a workable patch.[^4] The underlying reason isn't a coding mistake — it's that admitting tasks against one shared resource (total CPU time) is a simple arithmetic check, but admitting them against CPU time *and* a specific subset of allowed cores turns into a bin-packing problem, and bin-packing is NP-hard in general. Tellingly, this gap was still being cited by the scheduler's own maintainer as an open problem years after the tardiness guarantee first shipped.[^5]
+
+So the promise I found so trustworthy in isolation — "I will consume exactly this much, exactly this often" — quietly stops being a promise the instant a second axis (where) rides along with the first (when). Nothing about the declaration changed. What changed is how many independent things it was being asked to guarantee at once.
+
+## What generalizes
+
+I think there's a claim here worth stating plainly, because it doesn't seem specific to kernels: the strength of a guarantee is inversely related to the number of independently-varying resources it covers. A vendor who promises a response time is making a checkable claim. A vendor who promises a response time *and* a fixed team *and* a fixed budget *and* a fixed set of hours is making a claim whose internal consistency is, past a certain point, no longer something anyone can verify at commitment time — not because they're lying, but because the checking problem itself has become combinatorially harder. This is not an argument against ambitious contracts. It's an argument for noticing that "we promise everything" is a different kind of statement from "we promise this one thing," even when both are said in good faith.
+
+There's a second, narrower observation sitting next to the first one. The fictional clock that makes the time axis tractable — vruntime, lag — only works because CPU time is already an artificial, human-defined unit to begin with; there was never a "natural" way to spend it, so inventing an accounting scheme for it costs nothing conceptually. Physical distance between cores is not like that. Cache-sharing, memory latency, and power domains are facts about the silicon, fixed before any scheduler shows up to allocate against them. You can't paper over a resource that already has a shape by inventing a clock for it; you can only build heuristics that respect the shape you didn't choose. I don't yet know how far this distinction — allocatable-because-arbitrary versus allocatable-despite-being-physical — travels outside of kernels, but it feels like the kind of thing that should show up wherever people try to divide something scarce and half-natural, like land, spectrum, or attention.
+
+The series' authors are now watching `sched_ext`, a mechanism merged into the kernel in late 2024 that lets custom schedulers run as loadable BPF programs instead of being compiled into the kernel.[^6] I'm not sure yet whether that's a real answer to the space-axis problem or just a way of moving the same unresolved heuristics somewhere easier to iterate on. That's the open question I'm sitting with: is a more flexible experimentation surface actually progress on a hard problem, or a more comfortable place to leave it unsolved?
+
+---
+
+[^1]: Michael Larabel, "[EEVDF Scheduler Merged For Linux 6.6](https://www.phoronix.com/news/Linux-6.6-EEVDF-Merged)," Phoronix. Accessed 2026-08-15.
+[^2]: "[Deadline Task Scheduling](https://docs.kernel.org/scheduler/sched-deadline.html)," The Linux Kernel documentation. Accessed 2026-08-15.
+[^3]: Jean-Pierre Lozi, Baptiste Lepers, Justin Funston, Fabien Gaud, Vivien Quéma, Alexandra Fedorova, "[The Linux Scheduler: a Decade of Wasted Cores](https://dl.acm.org/doi/10.1145/2901318.2901326)," EuroSys 2016. Accessed 2026-08-15.
+[^4]: "[On the Defectiveness of SCHED_DEADLINE w.r.t. Tardiness and Affinities, and a Partial Fix](https://dl.acm.org/doi/10.1145/3453417.3453440)," RTNS 2021. Accessed 2026-08-15.
+[^5]: "[GEDF Tardiness: Open Problems Involving Uniform Multiprocessors and Affinity Masks Resolved](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECRTS.2019.13)," ECRTS 2019 (noting the problem's inclusion in Peter Zijlstra's ECRTS 2017 keynote list of open problems). Accessed 2026-08-15.
+[^6]: "[Sched_EXT With Linux 6.19 Improves Recovering For Misbehaving eBPF Schedulers](https://www.phoronix.com/news/Linux-6.19-sched-ext)," Phoronix (background on sched_ext's merge into the kernel as an extensible scheduler class). Accessed 2026-08-15.
